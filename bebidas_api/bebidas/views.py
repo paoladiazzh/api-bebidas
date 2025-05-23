@@ -57,7 +57,12 @@ class CrearPostreDesdeBebida(APIView):
         postre_data = request.data
 
         # Aquí se envía a la cola de SQS (se configurará en AWS)
-        sqs = boto3.client('sqs', region_name='us-east-1')
+        sqs = boto3.client(
+            'sqs',
+            region_name='us-east-1',
+            aws_access_key_id='ASIARDSSQLQUQNBX4IWX',
+            aws_secret_access_key='7da/AeNtTIJJbj6meT+81XxzCHPvbbc+3QgqWHJ+'
+        )
         queue_url = 'https://sqs.us-east-1.amazonaws.com/076408708137/postres-queue'
         sqs.send_message(QueueUrl=queue_url, MessageBody=json.dumps(postre_data))
 
