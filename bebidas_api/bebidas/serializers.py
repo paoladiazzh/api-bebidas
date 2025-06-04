@@ -1,7 +1,7 @@
 from rest_framework import serializers
+from .models import Bebida
 
-class BebidaSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    nombre = serializers.CharField(max_length=100)
-    tipo = serializers.CharField(max_length=50)
-    tamanio = serializers.CharField(max_length=10)
+class BebidaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Bebida
+        fields = '__all__'
