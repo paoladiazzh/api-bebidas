@@ -20,7 +20,6 @@ AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_SESSION_TOKEN = config('AWS_SESSION_TOKEN', default=None) # Opcional
 SQS_QUEUE_URL = config('SQS_QUEUE_URL')
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
